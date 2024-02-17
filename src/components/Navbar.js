@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
 
 export class Navbar extends Component {
-    static propTypes = {
-
-    }
-
     render() {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark  ">
                     <div className="container-fluid " >
-                        <a className="navbar-brand"  href="/">Taaza Khabar</a>
+                        <a className="navbar-brand" href="/">Taaza Khabar</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -28,10 +23,13 @@ export class Navbar extends Component {
                                         Category
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="/">Action</a></li>
-                                        <li><a className="dropdown-item" href="/">Another action</a></li>
-                                        <li><hr className="dropdown-divider" /></li>
-                                        <li><a className="dropdown-item" href="/">Something else here</a></li>
+                                        <li><a className="dropdown-item" href="/technology">Technology</a></li>
+                                        <li><a className="dropdown-item" href="/business">Business</a></li>
+                                        <li><a className="dropdown-item" href="/entertainment">Entertainment</a></li>
+                                        <li><a className="dropdown-item" href="/general">General</a></li>
+                                        <li><a className="dropdown-item" href="/health">Health</a></li>
+                                        <li><a className="dropdown-item" href="/science">Science</a></li>
+                                        <li><a className="dropdown-item" href="/sports">Sports</a></li>
                                     </ul>
                                 </li>
                             </ul>
