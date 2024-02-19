@@ -26,7 +26,7 @@ export class News extends Component {
         }
     }
 
-    
+
     // async fetchData() {
     //     this.setState({ loading: true })
     //     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
@@ -40,20 +40,20 @@ export class News extends Component {
     // }
 
 
-// it is used to fetch more data when we scroll down
+    // it is used to fetch more data when we scroll down
     fetchMoreData = async () => {
         this.setState({ page: this.state.page + 1 })
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true })
         let data = await fetch(url);
         let parsedData = await data.json()
         this.setState({
             articles: this.state.articles.concat(parsedData.articles),
-            totalResults: parsedData.totalResults,
+            // totalResults: parsedData.totalResults,
             loading: false
         })
     };
-//  it is used to fetch data from the api
+    //  it is used to fetch data from the api
     // it is used to fetch data when the component is mounted for initial data
     async componentDidMount() {
         this.props.setProgress(10);
@@ -88,19 +88,21 @@ export class News extends Component {
     //     this.fetchData();
     // }
 
+
+
     // it is used to render the component
     render() {
         return (
             <>
-                <h2 className='text-center  my-4' style={{ textTransform: "capitalize" }} >Taaza Khabar - Top {this.props.category} Headlines</h2>
+                <h2 className='text-center ' style={{ textTransform: "capitalize", marginTop:"70px" }} >Taaza Khabar - Top {this.props.category} Headlines</h2>
                 {this.state.loading && <Spinner />}
                 {/* it is used to infinite scroll */}
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
                     next={this.fetchMoreData}
                     hasMore={this.state.articles.length !== this.state.totalResults}
-                    loader={this.state.loading &&<Spinner />}
-                    
+                    loader={this.state.loading && <Spinner />}
+
                 >
                     <div className="container my-3">
                         <div className='row'>
