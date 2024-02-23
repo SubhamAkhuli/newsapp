@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className=' container my-4'>
+        <div className=' container '>
             <p>Welcome to Taaza khabar, your trusted source for timely and reliable news coverage. We are dedicated to delivering the latest and most relevant news stories from around the world, keeping you informed and engaged.</p>
             <p>At Taaza khabar, we understand the importance of staying well-informed in today's fast-paced world. Our team of experienced journalists and editors is committed to providing you with accurate, unbiased, and in-depth reporting on a wide range of topics, including pliitics, business, technliogy, health, entertainment, and more.</p>
 
