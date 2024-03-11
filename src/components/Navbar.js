@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import logo from './logo.jpg';
 import { NavLink } from 'react-router-dom'
 
 export class Navbar extends Component {
@@ -7,7 +8,8 @@ export class Navbar extends Component {
             <div>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark  ">
                     <div className="container-fluid " >
-                        <a className="navbar-brand" href="/">Taaza Khabar</a>
+                    <img style={{width: "40px", height: "35px", borderRadius: "50%"}} src={logo} alt='logo'></img>
+                        <a className="navbar-brand mx-2" href="/">Taaza Khabar</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
